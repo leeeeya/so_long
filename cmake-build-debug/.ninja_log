@@ -1,0 +1,9 @@
+# ninja log v5
+1	39	1647452271000000000	CMakeFiles/so_long.dir/GNL/get_next_line.c.o	61e19065c9a8dfee
+38	72	1647454500000000000	so_long	ccd6d7582285c5f0
+1	38	1647454500000000000	CMakeFiles/so_long.dir/check_map.c.o	4ec3dc6eb9c0e8a6
+2	41	1647453521000000000	CMakeFiles/so_long.dir/errors.c.o	4cb50dd12be90808
+2	39	1647453521000000000	CMakeFiles/so_long.dir/main.c.o	eb36a26fe57eea1d
+0	345	1647502138000000000	build.ninja	679229e01a9997f5
+1	322	1647502149000000000	CMakeFiles/so_long.dir/check_map.c.o	4ec3dc6eb9c0e8a6
+322	413	1647502149000000000	so_long	ccd6d7582285c5f0
