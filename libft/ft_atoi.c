@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_check(const char *str, int *p_i, int *p_minus)
 {
 	if (str[*p_i] == '+' && str[*p_i + 1] > 47 && str[*p_i + 1] < 58)

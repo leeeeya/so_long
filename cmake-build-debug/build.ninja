@@ -72,17 +72,23 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_so_long: phony || CMakeFiles/so_long.dir
 
+build CMakeFiles/so_long.dir/validation_check.c.o: C_COMPILER__so_long_Debug /Users/cstefany/Desktop/so_long/validation_check.c || cmake_object_order_depends_target_so_long
+  DEP_FILE = CMakeFiles/so_long.dir/validation_check.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu99
+  OBJECT_DIR = CMakeFiles/so_long.dir
+  OBJECT_FILE_DIR = CMakeFiles/so_long.dir
+
+build CMakeFiles/so_long.dir/init_map.c.o: C_COMPILER__so_long_Debug /Users/cstefany/Desktop/so_long/init_map.c || cmake_object_order_depends_target_so_long
+  DEP_FILE = CMakeFiles/so_long.dir/init_map.c.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu99
+  OBJECT_DIR = CMakeFiles/so_long.dir
+  OBJECT_FILE_DIR = CMakeFiles/so_long.dir
+
 build CMakeFiles/so_long.dir/GNL/get_next_line.c.o: C_COMPILER__so_long_Debug /Users/cstefany/Desktop/so_long/GNL/get_next_line.c || cmake_object_order_depends_target_so_long
   DEP_FILE = CMakeFiles/so_long.dir/GNL/get_next_line.c.o.d
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu99
   OBJECT_DIR = CMakeFiles/so_long.dir
   OBJECT_FILE_DIR = CMakeFiles/so_long.dir/GNL
-
-build CMakeFiles/so_long.dir/check_map.c.o: C_COMPILER__so_long_Debug /Users/cstefany/Desktop/so_long/check_map.c || cmake_object_order_depends_target_so_long
-  DEP_FILE = CMakeFiles/so_long.dir/check_map.c.o.d
-  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14 -std=gnu99
-  OBJECT_DIR = CMakeFiles/so_long.dir
-  OBJECT_FILE_DIR = CMakeFiles/so_long.dir
 
 build CMakeFiles/so_long.dir/errors.c.o: C_COMPILER__so_long_Debug /Users/cstefany/Desktop/so_long/errors.c || cmake_object_order_depends_target_so_long
   DEP_FILE = CMakeFiles/so_long.dir/errors.c.o.d
@@ -104,9 +110,9 @@ build CMakeFiles/so_long.dir/main.c.o: C_COMPILER__so_long_Debug /Users/cstefany
 #############################################
 # Link the executable so_long
 
-build so_long: C_EXECUTABLE_LINKER__so_long_Debug CMakeFiles/so_long.dir/GNL/get_next_line.c.o CMakeFiles/so_long.dir/check_map.c.o CMakeFiles/so_long.dir/errors.c.o CMakeFiles/so_long.dir/main.c.o | ../libft/libft.a
+build so_long: C_EXECUTABLE_LINKER__so_long_Debug CMakeFiles/so_long.dir/validation_check.c.o CMakeFiles/so_long.dir/init_map.c.o CMakeFiles/so_long.dir/GNL/get_next_line.c.o CMakeFiles/so_long.dir/errors.c.o CMakeFiles/so_long.dir/main.c.o | ../libft/libft.a ../minilibx_opengl_20191021/libmlx.a
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14
-  LINK_LIBRARIES = ../libft/libft.a
+  LINK_LIBRARIES = ../libft/libft.a  ../minilibx_opengl_20191021/libmlx.a
   OBJECT_DIR = CMakeFiles/so_long.dir
   POST_BUILD = :
   PRE_LINK = :

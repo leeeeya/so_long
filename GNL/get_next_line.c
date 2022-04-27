@@ -12,16 +12,7 @@
 
 #include "get_next_line.h"
 #include <stdio.h>
-
-void	mem_error_handler(char *mem)
-{
-	if (!mem)
-	{
-		free(mem);
-		write(2, "ERROR: Memory allocation error\n", 31);
-		exit(12);
-	}
-}
+#include "../so_long.h"
 
 char	*read_line(int fd, char **next_line)
 {

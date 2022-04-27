@@ -35,9 +35,7 @@ SRC = ft_bzero.c \
 	  ft_putnbr_fd.c \
 	  ft_striteri.c \
 	  ft_split.c \
-
-
-SRC_B = ft_lstnew.c \
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -49,7 +47,6 @@ SRC_B = ft_lstnew.c \
 
 FLAGS = -Wall -Wextra -Werror
 OBJ = $(patsubst %.c,%.o,$(SRC))
-OBJ_B = $(patsubst %.c,%.o,$(SRC_B))
 HEADER = libft.h
 
 all : $(NAME)
@@ -60,21 +57,15 @@ $(NAME) : $(OBJ) $(HEADER)
 $(OBJ) :%.o : %.c
 	gcc $(FLAGS) -c $< -o $@
 
-bonus : $(OBJ) $(OBJ_B) $(HEADER)
-	ar rcs $(NAME) $?
-
-$(OBJ_B) :%.o : %.c
-	gcc $(FLAGS) -c $< -o $@
-
 clean :
-	rm -f $(OBJ) $(OBJ_B)
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
 
 re :  fclean all
 
-.PHONY : all clean fclean re bonus
+.PHONY : all clean fclean re
 
 
 
