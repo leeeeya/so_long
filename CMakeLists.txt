@@ -12,7 +12,7 @@ add_executable(so_long
         )
 
 target_link_libraries(so_long /Users/cstefany/Desktop/so_long/libft/libft.a
-        /Users/cstefany/Desktop/so_long/minilibx_opengl_20191021/libmlx.a
+#        /Users/cstefany/Desktop/so_long/minilibx_opengl_20191021/libmlx.a
         )
 
-target_compile_options(so_long INTERFACE -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit)
+#target_compile_options(so_long INTERFACE -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit)

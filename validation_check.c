@@ -19,8 +19,10 @@ void	init_struct(t_map *map, t_list *tmp_map)
 	map->col_amount = 0;
 	map->ex_amount = 0;
 	map->pos_amount = 0;
+	map->zero_amount = 0;
 	map->current_score = 0;
 	map->game_over = 0;
+	map->enemy_go = 0;
 	map->step_counter = 0;
 	map->player_pos = ft_calloc(2, sizeof(int));
 }
@@ -36,6 +38,8 @@ void	check_mid_str(char *mid_str, t_map *map, t_list **tmp_tmp, int i_y)
 			free_and_exit(tmp_tmp, 'v');
 		if (mid_str[i_x] == 'E')
 			map->ex_amount++;
+		else if (mid_str[i_x] == '0')
+			map->zero_amount++;
 		else if (mid_str[i_x] == 'P')
 		{
 			map->pos_amount++;

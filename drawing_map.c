@@ -66,6 +66,9 @@ void	switch_items(t_map *map, char item, int h, int w)
 	if (item == 'C')
 		mlx_put_image_to_window(map->mlx.mlx,
 			map->mlx.mlx_win, map->collect, w, h);
+	if (item == 'V')
+		mlx_put_image_to_window(map->mlx.mlx,
+			map->mlx.mlx_win, map->enemy, w, h);
 }
 
 void	put_images(t_map *map)
@@ -82,6 +85,7 @@ void	put_images(t_map *map)
 	{
 		j = 0;
 		w = 0;
+		if_bonus(h, &w, &j);
 		while (w != IMG_SIZE * map->width && map->map[i][j])
 		{
 			switch_items(map, map->map[i][j], h, w);
@@ -91,6 +95,7 @@ void	put_images(t_map *map)
 		h += IMG_SIZE;
 		i++;
 	}
+	write_moves(map);
 }
 
 void	drawing_map(t_map *map)

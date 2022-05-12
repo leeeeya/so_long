@@ -1,14 +1,16 @@
 NAME = so_long
 
 SRC = main.c \
-	init_map.c \
-	errors.c \
-	validation_check.c \
-	./GNL/get_next_line.c \
-	./GNL/get_next_line_utils.c \
-	hooks.c \
-	game_over.c \
-	drawing_map.c \
+		init_map.c \
+		errors.c \
+		validation_check.c \
+		./GNL/get_next_line.c \
+		./GNL/get_next_line_utils.c \
+		hooks.c \
+		game_over.c \
+		drawing_map.c \
+		enemy.c \
+		bonus.c \
 
 OBJ = $(SRC:%.c=%.o)
 

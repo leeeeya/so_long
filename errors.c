@@ -55,3 +55,8 @@ void	free_array(char **array)
 	}
 	free(array);
 }
+
+int	ft_close(void)
+{
+	exit(0);
+}

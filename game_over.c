@@ -37,12 +37,20 @@ void	ft_gameover(t_map *map)
 {
 	int	x_words;
 	int	y_words;
+	int	average_x;
+	int	average_y;
 
-	x_words = (map->width / 2) * IMG_SIZE - IMG_SIZE;
-	y_words = (map->height / 2) * IMG_SIZE - IMG_SIZE;
+	average_x = map->width;
+	average_y = map->height;
+	if (average_x % 2 == 1)
+		average_x++;
+	if (average_y % 2 == 1)
+		average_y++;
+	x_words = (average_x / 2) * IMG_SIZE - IMG_SIZE * 2;
+	y_words = (average_y / 2) * IMG_SIZE - IMG_SIZE;
 	field(map);
 	draw_frame(map);
-	if (map->current_score != map->col_amount)
+	if (map->current_score != map->col_amount || map->enemy_go)
 		mlx_put_image_to_window(map->mlx.mlx, map->mlx.mlx_win, map->gameover,
 			x_words, y_words);
 	else

@@ -84,11 +84,6 @@
 				"backtrace" : 2,
 				"fragment" : "../libft/libft.a",
 				"role" : "libraries"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "../minilibx_opengl_20191021/libmlx.a",
-				"role" : "libraries"
 			}
 		],
 		"language" : "C"

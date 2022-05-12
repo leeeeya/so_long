@@ -36,16 +36,19 @@ typedef struct s_map
 	int		ex_amount;
 	int		pos_amount;
 	int		col_amount;
+	int		zero_amount;
 	int		*player_pos;
 	void	*player;
 	void	*floor;
 	void	*wall;
 	void	*collect;
 	void	*exit;
+	void	*enemy;
 	void	*gameover;
 	void	*win;
 	int		current_score;
 	int		game_over;
+	int		enemy_go;
 	int		step_counter;
 	t_mlx	mlx;
 }	t_map;
@@ -63,4 +66,8 @@ void	field(t_map *map);
 void	ft_gameover(t_map *map);
 void	player_position(t_map *map);
 void	drawing_map(t_map *map);
+int		loop_hook(t_map *map);
+int		enemy(t_map *map);
+void	write_moves(t_map *map);
+void	if_bonus(int h, int *w, int *j);
 #endif //SO_LONG_H

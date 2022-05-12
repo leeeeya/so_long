@@ -12,17 +12,6 @@
 
 #include "so_long.h"
 
-int	ft_close(void) //t_map *map
-{
-//	while(*map->map)
-//	{
-//		free(*map->map);
-//		map->map++;
-//	}
-//	free(map->map);
-	exit(0);
-}
-
 void	move_options(int x_move, int y_move, t_map *map)
 {
 	int	x_player;
@@ -35,6 +24,12 @@ void	move_options(int x_move, int y_move, t_map *map)
 		map->map[y_player][x_player] = '0';
 		map->game_over = 1;
 	}
+	else if (map->map[y_player + y_move][x_player + x_move] == 'V')
+	{
+		map->map[y_player][x_player] = '0';
+		map->game_over = 1;
+		map->enemy_go = 1;
+	}
 	else if (map->map[y_player + y_move][x_player + x_move] != '1'
 		&& !map->game_over)
 	{
@@ -42,24 +37,52 @@ void	move_options(int x_move, int y_move, t_map *map)
 			map->current_score++;
 		map->map[y_player][x_player] = '0';
 		map->map[y_player + y_move][x_player + x_move] = 'P';
+		map->step_counter++;
 	}
 }
 
-void	all_dir(int keycode, t_map *map)
+void	left_right(int keycode, t_map *map)
 {
+	int	x;
+	int	y;
+
 	if (keycode == 2 || keycode == 124)
+	{
 		move_options(1, 0, map);
+		map->player = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/right.xpm", &x, &y);
+	}
 	if (keycode == 0 || keycode == 123)
+	{
 		move_options(-1, 0, map);
+		map->player = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/left.xpm", &x, &y);
+	}
+}
+
+void	up_down(int keycode, t_map *map)
+{
+	int	x;
+	int	y;
+
 	if (keycode == 13 || keycode == 126)
+	{
 		move_options(0, -1, map);
+		map->player = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/back.xpm", &x, &y);
+	}
 	if (keycode == 1 || keycode == 125)
+	{
 		move_options(0, 1, map);
+		map->player = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/player.xpm", &x, &y);
+	}
 }
 
 void	ft_move(int keycode, t_map *map)
 {
-	all_dir(keycode, map);
+	left_right(keycode, map);
+	up_down(keycode, map);
 	if (!map->game_over)
 	{
 		player_position(map);
@@ -67,10 +90,6 @@ void	ft_move(int keycode, t_map *map)
 	}
 	else
 		ft_gameover(map);
-	map->step_counter++;
-	write(1, "Moves: ", 7);
-	ft_putnbr_fd(map->step_counter, 1);
-	write(1, "\r", 1);
 }
 
 int	key_hook(int keycode, t_map *map)

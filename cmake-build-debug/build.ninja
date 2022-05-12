@@ -110,9 +110,9 @@ build CMakeFiles/so_long.dir/main.c.o: C_COMPILER__so_long_Debug /Users/cstefany
 #############################################
 # Link the executable so_long
 
-build so_long: C_EXECUTABLE_LINKER__so_long_Debug CMakeFiles/so_long.dir/validation_check.c.o CMakeFiles/so_long.dir/init_map.c.o CMakeFiles/so_long.dir/GNL/get_next_line.c.o CMakeFiles/so_long.dir/errors.c.o CMakeFiles/so_long.dir/main.c.o | ../libft/libft.a ../minilibx_opengl_20191021/libmlx.a
+build so_long: C_EXECUTABLE_LINKER__so_long_Debug CMakeFiles/so_long.dir/validation_check.c.o CMakeFiles/so_long.dir/init_map.c.o CMakeFiles/so_long.dir/GNL/get_next_line.c.o CMakeFiles/so_long.dir/errors.c.o CMakeFiles/so_long.dir/main.c.o | ../libft/libft.a
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.14
-  LINK_LIBRARIES = ../libft/libft.a  ../minilibx_opengl_20191021/libmlx.a
+  LINK_LIBRARIES = ../libft/libft.a
   OBJECT_DIR = CMakeFiles/so_long.dir
   POST_BUILD = :
   PRE_LINK = :
