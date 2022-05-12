@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 #include <stdio.h>
-#include "../so_long.h"
+#include "../src/so_long.h"
 
 char	*read_line(int fd, char **next_line)
 {
