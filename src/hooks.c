@@ -19,6 +19,7 @@ void	move_options(int x_move, int y_move, t_map *map)
 
 	x_player = map->player_pos[0];
 	y_player = map->player_pos[1];
+	map->step_counter++;
 	if (map->map[y_player + y_move][x_player + x_move] == 'E')
 	{
 		map->map[y_player][x_player] = '0';
@@ -31,7 +32,6 @@ void	move_options(int x_move, int y_move, t_map *map)
 			map->current_score++;
 		map->map[y_player][x_player] = '0';
 		map->map[y_player + y_move][x_player + x_move] = 'P';
-		map->step_counter++;
 	}
 }
 

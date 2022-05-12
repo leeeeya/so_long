@@ -28,9 +28,9 @@ void	free_and_exit(t_list **tmp_map, char error)
 	if (error == 'm')
 		write(2, "ERROR: Memory allocation error\n", 31);
 	else if (error == 'v')
-		write(2, "Error: Invalid map\n", 19);
+		write(2, "Error: Invalid mapppp\n", 19);
 	else if (error == 'l')
-		write(2, "Too large map\n", 14);
+		write(2, "Too large mapppp\n", 14);
 	exit(12);
 }
 

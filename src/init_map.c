@@ -34,6 +34,42 @@ void	player_position(t_map *map)
 	}
 }
 
+void	if_error(char error, char *tmp_str)
+{
+	if (error == 'e' && !tmp_str)
+	{
+		write(1, "Error: Empty file\n", 18);
+		exit(1);
+	}
+	if (error == 'f')
+	{
+		write(1, "Error: Invalid file\n", 20);
+		exit(1);
+	}
+}
+
+int	check_file(char *path)
+{
+	int		i;
+	char	*tmp;
+	int		fd;
+
+	i = 0;
+	tmp = path;
+	if (ft_strlen(tmp) < 5)
+		if_error('f', NULL);
+	while (i < (int)ft_strlen(tmp) - (int)ft_strlen(".ber") + 2)
+	{
+		i++;
+		tmp++;
+	}
+	if (ft_strncmp(tmp, ".ber", (int)ft_strlen(".ber")))
+		if_error('f', NULL);
+	fd = open(path, O_RDONLY);
+	check_fd_error(fd);
+	return (fd);
+}
+
 t_list	*create_list(char *path, t_map *map)
 {
 	int		fd;
@@ -42,9 +78,9 @@ t_list	*create_list(char *path, t_map *map)
 	char	*tmp_str;
 	t_list	*new_node;
 
-	fd = open(path, O_RDONLY);
-	check_fd_error(fd);
+	fd = check_file(path);
 	tmp_str = get_next_line(fd);
+	if_error('e', tmp_str);
 	while (tmp_str)
 	{
 		str = ft_strtrim(tmp_str, "\n");
