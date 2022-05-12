@@ -54,8 +54,8 @@ void	move_enemy(t_map *map, int x, int y, int dir)
 
 void	direction(t_map *map, int x, int y, int *right)
 {
-//	int	xx;
-//	int	yy;
+	int	xx;
+	int	yy;
 
 	if (*right)
 	{
@@ -63,8 +63,8 @@ void	direction(t_map *map, int x, int y, int *right)
 				|| map->map[y][x + 1] == 'E')
 			*right = 0;
 		move_enemy(map, x, y, 1);
-//		map->enemy = mlx_xpm_file_to_image(map->mlx.mlx,
-//				"./textures/wolf_r.xpm", &xx, &yy);
+		map->enemy = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/wolf_r.xpm", &xx, &yy);
 	}
 	if (!(*right))
 	{
@@ -72,8 +72,8 @@ void	direction(t_map *map, int x, int y, int *right)
 				|| map->map[y][x - 1] == 'E')
 			*right = 1;
 		move_enemy(map, x, y, -1);
-//		map->enemy = mlx_xpm_file_to_image(map->mlx.mlx,
-//				"./textures/wolf_l.xpm", &xx, &yy);
+		map->enemy = mlx_xpm_file_to_image(map->mlx.mlx,
+				"./textures/wolf_l.xpm", &xx, &yy);
 	}
 }
 

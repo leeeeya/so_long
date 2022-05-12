@@ -18,10 +18,10 @@ void	start(t_map *map)
 	map->mlx.mlx_win = mlx_new_window(map->mlx.mlx, IMG_SIZE * map->width,
 			IMG_SIZE * map->height, "so_long");
 	drawing_map(map);
-	mlx_hook(map->mlx.mlx_win, 17, 0, ft_close, NULL);
-	mlx_hook(map->mlx.mlx_win, 2, 0, key_hook, &map);
+	mlx_hook(map->mlx.mlx_win, 17, 0, &ft_close, NULL);
+	mlx_hook(map->mlx.mlx_win, 2, 0, &key_hook, map);
 	if (enemy(map))
-		mlx_loop_hook(map->mlx.mlx, &loop_hook, &map);
+		mlx_loop_hook(map->mlx.mlx, &loop_hook, map);
 	mlx_loop(map->mlx.mlx);
 }
 

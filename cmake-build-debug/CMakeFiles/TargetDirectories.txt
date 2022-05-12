@@ -1,3 +1,0 @@
-/Users/cstefany/Desktop/so_long/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/cstefany/Desktop/so_long/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/cstefany/Desktop/so_long/cmake-build-debug/CMakeFiles/so_long.dir
