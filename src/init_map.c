@@ -53,12 +53,14 @@ int	check_file(char *path)
 	int		i;
 	char	*tmp;
 	int		fd;
+	int		len;
 
 	i = 0;
 	tmp = path;
 	if (ft_strlen(tmp) < 5)
 		if_error('f', NULL);
-	while (i < (int)ft_strlen(tmp) - (int)ft_strlen(".ber") + 2)
+	len = (int)ft_strlen(tmp);
+	while (i < len - 4)
 	{
 		i++;
 		tmp++;
